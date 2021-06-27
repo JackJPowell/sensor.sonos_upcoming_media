@@ -1,0 +1,9 @@
+{
+    "domain": "sonos_upcoming_media",
+    "name": "Sonos Upcoming Media",
+    "version": "0.1",
+    "documentation": "https://github.com/JackJPowell/sensor.sonos_upcoming_media",
+    "dependencies": [],
+    "codeowners": ["@jackjpowell"],
+    "requirements": []
+  }
