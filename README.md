@@ -21,7 +21,6 @@ Read through these two resources before posting issues to GitHub or the forums.
 | max | 3 | no | Max number of items in sensor.
 </br>
 
-**Do not just copy examples, please use config options above to build your own!**
 ### Sample for configuration.yaml:
 
 ```
