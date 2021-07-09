@@ -1,7 +1,7 @@
 # Sonos Upcoming Media Component
 
 Home Assistant component to feed [Upcoming Media Card](https://github.com/custom-cards/upcoming-media-card) with your Sonos Queue.</br></br>
-This component displays your Sonos Queue, not the queue of media that may be playing through your Sonos. As an example, if you are airplaying to your sonos or steaming to it over spotify connect, those queues will not be displayed in this component.</br>
+This component displays your Sonos Queue, not the queue of media that may be playing through your Sonos. As an example, if you are airplaying to your sonos or steaming to it from outside the Sonos app, those queues will not be displayed in this component.</br>
 This component does not require, nor conflict with, the default Sonos component.</br></br>
 ### Issues
 Read through these two resources before posting issues to GitHub or the forums.
