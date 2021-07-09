@@ -13,10 +13,11 @@ from homeassistant.components.sensor import PLATFORM_SCHEMA
 from homeassistant.helpers.entity import Entity
 from .soco import SoCo
 
-__version__ = '0.1'
+__version__ = '1.0'
 
 _LOGGER = logging.getLogger(__name__)
 
+SCAN_INTERVAL = datetime.timedelta(minutes=1)
 CONF_IP = 'ip'
 CONF_MAX = 'max'
 
@@ -67,7 +68,6 @@ class SonosUpcomingMediaSensor(Entity):
             card_item['episode'] = item.album
             card_item['genres'] = item.creator
             
-            
             try:
                 card_item['poster'] = re.sub('.jpg', '_t.jpg', item.album_art_uri)
                 card_item['fanart'] = re.sub('.jpg', '_t.jpg', item.album_art_uri)
@@ -82,13 +82,9 @@ class SonosUpcomingMediaSensor(Entity):
         try:
             speaker = SoCo(self.ip)
             queue = speaker.get_queue(0,self.max_items,True)
+            self._state = 'Online'
+            self.data = queue
         except OSError:
             _LOGGER.warning("Host %s is not available", self.ip)
             self._state = '%s cannot be reached' % self.ip
             return
-
-        if len("test") > 0:
-            self._state = 'Online'
-            self.data = queue
-        else:
-            self._state = '%s cannot be reached' % self.ip
